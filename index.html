@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///Users/koderahayato/Downloads/index.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>でらぼ — Webバックエンドエンジニア</title>
+<meta name="description" content="Ruby on Rails / Laravel を主軸とするWebバックエンドエンジニア。哲学の大学院、予備校のマネジメントを経てエンジニアへ。シビックテック、人文知とテクノロジーの融合に関心があります。">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#16111C">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="でらぼ — Webバックエンドエンジニア">
+<meta property="og:description" content="哲学の大学院、予備校のマネジメントを経てWebエンジニアへ。Rails / Laravel が主軸。シビックテックと人文知に関心があります。">
+<!-- 公開先が決まったら og:url と og:image を設定してください -->
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./でらぼ — Webバックエンドエンジニア_files/css2" rel="stylesheet">
+<style>
+  :root{
+    --yoru:#16111C;
+    --sumi:#1F1828;
+    --gofun:#F0E8DC;
+    --gofun-dim:#B5ABA4;
+    --shu:#F2624B;
+    --yamabuki:#E7A93A;
+    --aomidori:#3FA79E;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *,*::before,*::after{box-sizing:inherit}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--yoru);color:var(--gofun);
+    font-family:"Zen Kaku Gothic New",-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;
+    font-size:16px;line-height:2;letter-spacing:.025em;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+
+  /* 夜に滲む灯り */
+  .lamp{
+    position:fixed;inset:-15%;z-index:-2;pointer-events:none;
+    background:
+      radial-gradient(48% 38% at 16% 10%, rgba(242,98,75,.30), transparent 68%),
+      radial-gradient(42% 34% at 86% 6%, rgba(231,169,58,.22), transparent 70%),
+      radial-gradient(55% 42% at 72% 88%, rgba(63,167,158,.24), transparent 72%),
+      radial-gradient(40% 40% at 8% 76%, rgba(242,98,75,.16), transparent 72%);
+    animation:drift 34s ease-in-out infinite alternate;
+  }
+  @keyframes drift{
+    from{transform:scale(1) translate3d(0,0,0)}
+    to{transform:scale(1.12) translate3d(-2.5%,1.5%,0)}
+  }
+  /* 粒子 */
+  .grain{
+    position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.22;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap{position:relative;max-width:44rem;margin:0 auto;padding:0 1.6rem 6rem}
+  .mincho{font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif}
+
+  /* hero */
+  .hero{padding:6rem 0 4rem}
+  .name{
+    font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif;font-weight:900;
+    font-size:clamp(3.6rem,15vw,6.2rem);line-height:1;margin:0;letter-spacing:.1em;
+    color:var(--gofun);
+    text-shadow:.055em .035em 0 rgba(242,98,75,.92), -.045em -.028em 0 rgba(63,167,158,.72);
+  }
+  .role{margin:1.6rem 0 0;font-size:.92rem;color:var(--yamabuki);letter-spacing:.14em}
+  .lede{margin:2.2rem 0 0;max-width:35rem;color:var(--gofun)}
+  .pull{
+    margin:2.6rem 0 0;padding:.1rem 0 .1rem 1.5rem;border-left:3px solid var(--shu);
+    font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif;font-weight:600;
+    font-size:clamp(1.08rem,2.4vw,1.26rem);line-height:2.1;letter-spacing:.08em;
+    max-width:33rem;color:var(--gofun);
+  }
+
+  /* sections */
+  section{padding-top:4rem}
+  h2{
+    font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif;font-weight:900;
+    font-size:1.5rem;letter-spacing:.18em;margin:0 0 1.7rem;padding-bottom:.7rem;
+    color:var(--gofun);border-bottom:1px solid rgba(240,232,220,.18);
+    text-shadow:.03em .02em 0 rgba(242,98,75,.55);
+  }
+  h3{
+    font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif;font-weight:600;
+    font-size:1.1rem;letter-spacing:.06em;margin:0 0 .2rem;line-height:1.7;color:var(--gofun);
+  }
+  p{margin:0 0 1.1rem;max-width:37rem}
+  section > p:last-child{margin-bottom:0}
+
+  dl{margin:0;display:grid;gap:1.2rem}
+  .row{display:grid;grid-template-columns:6.5rem 1fr;gap:1.4rem;align-items:baseline}
+  .row dt{color:var(--yamabuki);font-size:.84rem;letter-spacing:.07em;font-variant-numeric:tabular-nums}
+  .row dd{margin:0}
+
+  .item{margin-bottom:2.6rem;max-width:37rem}
+  .item:last-child{margin-bottom:0}
+  .period{display:block;color:var(--gofun-dim);font-size:.8rem;letter-spacing:.08em;margin-bottom:.6rem}
+  .item p{margin:0 0 .7rem}
+  .stack{margin:0;color:var(--aomidori);font-size:.85rem;letter-spacing:.05em}
+  .note{color:var(--gofun-dim);font-size:.9rem}
+
+  ul{margin:0 0 1.3rem;padding-left:1.2rem;max-width:37rem}
+  li{margin-bottom:.45rem}
+  li::marker{color:var(--shu)}
+
+  .likes{display:grid;gap:1.4rem;max-width:37rem}
+  .likes div{display:grid;grid-template-columns:4rem 1fr;gap:1.2rem;align-items:baseline}
+  .likes b{color:var(--yamabuki);font-size:.86rem;font-weight:500;letter-spacing:.1em}
+
+  .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin:.7rem 0 0;font-size:.92rem}
+  a{color:var(--shu);text-underline-offset:.28em;text-decoration-thickness:1px}
+  a:hover{text-decoration:none;color:var(--yamabuki)}
+  a:focus-visible{outline:2px solid var(--yamabuki);outline-offset:3px}
+
+  footer{margin-top:5.5rem;padding-top:1.4rem;border-top:1px solid rgba(240,232,220,.15);
+    color:var(--gofun-dim);font-size:.8rem;letter-spacing:.1em}
+
+  @media (max-width:640px){
+    .hero{padding:4rem 0 3rem}
+    .row{grid-template-columns:1fr;gap:.1rem}
+    .row dt{line-height:1.8}
+    .likes div{grid-template-columns:1fr;gap:.1rem}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .lamp{animation:none}
+    *{transition:none!important}
+  }
+</style>
+</head>
+<body>
+<div class="lamp" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <h1 class="name">でらぼ</h1>
+    <p class="role">Web バックエンドエンジニア（Ruby on Rails / Laravel）</p>
+    <p class="lede">哲学科の大学院を出たあと、予備校で5年間ほど勤務し、教室責任者などマネジメントも経験しました。31歳でエンジニアに転職。現在はFinTech系の受託開発企業で、約40名規模のスクラム開発に入っています。</p>
+    <p class="pull">デジタル・リアル双方での対話空間の創出、デジタル民主主義、プルラリティなどのシビックテック領域、人文知とテクノロジーの融合に関心があります。</p>
+  </header>
+
+  <section>
+    <h2>経歴</h2>
+    <dl>
+      <div class="row"><dt>2010–2017</dt><dd>成蹊大学 文学部 → 早稲田大学大学院 文学研究科 哲学コース 修士課程修了</dd></div>
+      <div class="row"><dt>2017–2022</dt><dd>大手予備校グループ／教室長・エリア責任者</dd></div>
+      <div class="row"><dt>2022–2024</dt><dd>Web制作・システム開発のスタートアップ／コーダー → 開発リーダー</dd></div>
+      <div class="row"><dt>2025–</dt><dd>FinTech系の受託開発企業／開発エンジニア（組織マネージャーなどの兼務経験もあり）</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>スキル</h2>
+    <p>Ruby on Rails / Laravel でのバックエンド開発が主軸です。フロントエンド（TypeScript / React / Vue.js）やインフラ（AWS・GCP・Docker・Kubernetes）も業務で触れています。</p>
+    <p>要件定義・DB設計・API設計といった上流工程も経験があり、データベースはPostgreSQL・MySQLでテーブル設計まで。Git / GitHub、GitHub Actions を使ったスクラム開発が中心です。</p>
+  </section>
+
+  <section>
+    <h2>案件経歴</h2>
+    <p class="note">受託中心のため、クライアント名とサービス名は伏せています。全16件のうち主なもの。</p>
+
+    <div class="item">
+      <h3>採用管理SaaSの保守運用</h3>
+      <span class="period">2025.2 〜 継続中</span>
+      <p>マルチテナント型SaaS。約40名のスクラム体制で、開発メンバーとしてAPI設計・詳細設計・実装・テストを担当。</p>
+      <p class="stack">Ruby on Rails ／ TypeScript ／ React ／ RSpec ／ PostgreSQL ／ GCP ／ Kubernetes</p>
+    </div>
+
+    <div class="item">
+      <h3>コンクール開催管理システムのリニューアル</h3>
+      <span class="period">2023.10 〜 2024.3、以降保守</span>
+      <p>全国の自治体で行われるコンクールの開催支援から、応募・審査・表彰までを管理するシステム。開発リーダー（PM兼開発）として5名体制を担当。要件定義・DB設計・クライアント折衝・スケジュール管理・メンバー指導まで一通り。</p>
+      <p class="stack">Laravel ／ PHP ／ AWS ／ MySQL</p>
+    </div>
+
+    <div class="item">
+      <h3>ガチャシステム型アプリの新規開発</h3>
+      <span class="period">2023.2 〜、以降保守</span>
+      <p>総ユーザー数15万人規模の新規事業。</p>
+      <p class="stack">Laravel ／ Vue.js ／ Tailwind CSS ／ AWS ／ MySQL ／ Stripe</p>
+    </div>
+
+    <div class="item">
+      <h3>そのほか</h3>
+      <p>スケジュール管理アプリの設計、社宅管理システムのリニューアル、福祉請求システムの追加開発、求人マッチングシステムの保守、ヘッドレスCMSでのコーポレートサイト保守、各種サイトリニューアル、キャンペーンLP制作など。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>個人の活動</h2>
+
+    <div class="item">
+      <h3>Small Voice（社内ハッカソン）</h3>
+      <p>小さな声を集めて可視化する、生成AIを使ったWebサービス。</p>
+      <p class="links">
+        <a href="https://small-voice-landing-kzmtdesx2q-an.a.run.app/introduction" target="_blank" rel="noopener">紹介ページ</a>
+        <a href="https://www.youtube.com/watch?v=dZrxUNqVNdo" target="_blank" rel="noopener">デモ動画</a>
+        <a href="https://github.com/small-voice/small-voice-project" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>「文学や詩をプログラミング的に考えてみる」（社内LT会）</h3>
+      <p>社内のLT会で、文学と詩をテーマに登壇しました。</p>
+      <p class="links"><a href="https://speakerdeck.com/hkdrb/wen-xue-yashi-wopuroguramingude-nikao-etemiru" target="_blank" rel="noopener">発表資料を見る</a></p>
+    </div>
+
+    <div class="item">
+      <h3>哲学対話</h3>
+      <p>休日は有志の哲学対話などに継続的に参加しています。</p>
+    </div>
+
+    <div class="item">
+      <h3>ドイツ語の翻訳</h3>
+      <p>大学の頃の先生とほか数名で、細々と趣味レベルで続けています。全然読めないです。近々出版予定のものもあります。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>これから</h2>
+    <ul>
+      <li>シビックテック領域への参画</li>
+      <li>人文知とテクノロジーの融合</li>
+      <li>デジタルな対話空間の創出</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>趣向</h2>
+    <div class="likes">
+      <div><b>本</b><span>ニーチェ、ハイデガー、九鬼周造『「いき」の構造』、山口昌男『道化の民俗学』、ドストエフスキー、リルケ、ヘッセ、カフカ、サリンジャー、坂口安吾、深沢七郎、高橋源一郎</span></div>
+      <div><b>映画</b><span>北野武『ソナチネ』『菊次郎の夏』、メルヴィル『サムライ』、『きっとうまくいく』</span></div>
+      <div><b>音楽</b><span>踊ってばかりの国、ブライアン・ウィルソン、はっぴいえんど。ピアノも弾きます</span></div>
+    </div>
+  </section>
+
+  <footer>最終更新 2026年9月</footer>
+</div>
+
+
+</body></html>
