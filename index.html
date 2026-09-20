@@ -83,6 +83,13 @@
 
   /* hero */
   .hero{padding:6rem 0 4rem}
+  .hero-head{display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap}
+  .profile-photo{
+    width:min(9rem,26vw);aspect-ratio:1;border-radius:50%;overflow:hidden;
+    border:2px solid rgba(157,189,234,.55);box-shadow:0 0 0 6px rgba(157,189,234,.08),0 14px 34px rgba(5,7,15,.5);
+    background:#0d1628;flex-shrink:0;
+  }
+  .profile-photo img{display:block;width:100%;height:100%;object-fit:cover}
   .name{
     font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif;font-weight:900;
     font-size:clamp(3.6rem,15vw,6.2rem);line-height:1;margin:0;letter-spacing:.1em;
@@ -160,9 +167,14 @@
 <div class="wrap">
 
   <header class="hero">
-    <h1 class="name">でらぼ</h1>
+    <div class="hero-head">
+      <div class="profile-photo">
+        <img src="ogp/avatar.jpg" alt="でらぼのアイコン（羊のぬいぐるみ）" width="196" height="196" decoding="async">
+      </div>
+      <h1 class="name">でらぼ</h1>
+    </div>
     <p class="lede">哲学科の大学院を出たあと、予備校で5年間ほど勤務し、31歳でWebエンジニアに転職。現在は渋谷の受託開発企業に勤務。</p>
-    <p class="pull">デジタル・リアル双方での対話空間の創出、デジタル民主主義、プルラリティなどのシビックテック領域、人文知とテクノロジーの融合に関心があります。</p>
+    <p class="pull">デジタル・リアル双方での対話空間の創出、デジタル民主主義、プルラリティなどのシビックテック領域、人文知とテクノロジーの融合などに関心があります。</p>
   </header>
 
   <section>
@@ -171,7 +183,7 @@
       <div class="row"><dt>2010–2017</dt><dd>成蹊大学 文学部 → 早稲田大学大学院 文学研究科 哲学コース 修士課程修了</dd></div>
       <div class="row"><dt>2017–2022</dt><dd>大手予備校グループ／教室長・エリア責任者</dd></div>
       <div class="row"><dt>2022–2024</dt><dd>Web制作・システム開発のスタートアップ／コーダー → BEエンジニア → 開発リーダー</dd></div>
-      <div class="row"><dt>2025–</dt><dd>FinTech系の受託開発企業／開発エンジニア（組織マネージャーなどの兼務経験もあり）</dd></div>
+      <div class="row"><dt>2025–</dt><dd>FinTech系の受託開発企業／開発エンジニア／組織マネージャー経験も有</dd></div>
     </dl>
   </section>
 
@@ -200,7 +212,7 @@
     <div class="item">
       <h3>ガチャシステム型アプリの新規開発</h3>
       <span class="period">2023.2 〜、以降保守</span>
-      <p>総ユーザー数15万人規模の新規事業。</p>
+      <p>総ユーザー数15万人規模の新規システム開発にコアメンバーとして参画。</p>
       <p class="stack">Laravel ／ Vue.js ／ Tailwind CSS ／ AWS ／ MySQL</p>
     </div>
 
@@ -235,7 +247,7 @@
     </div>
 
     <div class="item">
-      <h3>ドイツ語の翻訳</h3>
+      <h3>ドイツ語哲学書の翻訳</h3>
       <p>大学の頃の先生とほか数名のメンバーで、細々と趣味レベルで続けています。ドイツ語は学生時代勉強していましたが、全然読めないです。近々出版するかもしれないものはあります。</p>
     </div>
   </section>
@@ -252,7 +264,7 @@
   <section>
     <h2>趣向</h2>
     <div class="likes">
-      <div><b>本</b><span>ニーチェ『ツァラトゥストラ』、ハイデガー『存在と時間』、ドストエフスキー『カラマーゾフの兄弟』、リルケ『若き詩人への手紙』、ヘッセ『車輪の下』『デミアン』『荒野のおおかみ』、カフカ『変身』、サリンジャー『ライ麦畑でつかまえて』、ヴォネガット『プレイヤー・ピアノ』、ラム・ダス『ビー・ヒア・ナウ』、坂口安吾『堕落論』『FARCEに就て』、九鬼周造『「いき」の構造』、深沢七郎『楢山節考』『風流夢譚』、山口昌男『道化の民俗学』『道化的世界』、高橋源一郎『ジョン・レノン対火星人』『さようなら、ギャングたち』、戌井昭人『ぴんぞろ』</span></div>
+      <div><b>本</b><span>ニーチェ『ツァラトゥストラ』、ハイデガー『存在と時間』、ドストエフスキー『カラマーゾフの兄弟』、リルケ『若き詩人への手紙』、ヘッセ『車輪の下』『デミアン』『荒野のおおかみ』、カフカ『変身』、サリンジャー『ライ麦畑でつかまえて』、ヴォネガット『プレイヤー・ピアノ』、ラム・ダス『ビー・ヒア・ナウ』、坂口安吾『堕落論』『FARCEに就て』、九鬼周造『「いき」の構造』、深沢七郎『楢山節考』『風流夢譚』、宮沢賢治『銀河鉄道の夜』、山口昌男『道化の民俗学』『道化的世界』、高橋源一郎『ジョン・レノン対火星人』『さようなら、ギャングたち』、戌井昭人『ぴんぞろ』</span></div>
       <div><b>映画</b><span>北野武『ソナチネ』『菊次郎の夏』『座頭市』、メルヴィル『サムライ』、『きっとうまくいく』、『ネバーランド』、『ラブ&amp;マーシー』</span></div>
       <div><b>音楽</b><span>踊ってばかりの国、ザ・ビーチ・ボーイズ、ブライアン・ウィルソン。大学４年から１年間ピアノ習いましたが、弾けません。バーでピアノを奏でる人生が良かったです。</span></div>
     </div>
