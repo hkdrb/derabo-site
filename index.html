@@ -97,12 +97,25 @@
   }
   .role{margin:1.6rem 0 0;font-size:.92rem;color:var(--tetsu);letter-spacing:.14em}
   .lede{margin:2.2rem 0 0;max-width:35rem;color:var(--gofun)}
-  .pull{
-    margin:2.6rem 0 0;padding:.1rem 0 .1rem 1.5rem;border-left:3px solid var(--ginga);
+  .vision{
+    margin:0;padding:0;list-style:none;max-width:34rem;
     font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif;font-weight:600;
     font-size:clamp(1.08rem,2.4vw,1.26rem);line-height:2.1;letter-spacing:.08em;
-    max-width:33rem;color:var(--gofun);
+    color:var(--gofun);
   }
+  .vision li{
+    position:relative;padding-left:1.5rem;margin-bottom:1.1rem;
+  }
+  .vision li:last-child{margin-bottom:0}
+  .vision li::before{
+    content:"";position:absolute;left:-.12rem;top:.7em;
+    width:1rem;height:1rem;background:var(--ginga);
+    clip-path:polygon(50% 0%,59% 41%,100% 50%,59% 59%,50% 100%,41% 59%,0% 50%,41% 41%);
+    filter:drop-shadow(0 0 .3rem rgba(174,196,240,.9));
+    animation:twinkle 5s ease-in-out infinite alternate;
+  }
+  .vision li:nth-child(2)::before{animation-delay:-1.7s}
+  .vision li:nth-child(3)::before{animation-delay:-3.4s}
 
   /* sections */
   section{padding-top:4rem}
@@ -118,6 +131,31 @@
   }
   p{margin:0 0 1.1rem;max-width:37rem}
   section > p:last-child{margin-bottom:0}
+
+  /* 折りたたみ */
+  details.fold > summary{display:block;cursor:pointer;list-style:none;margin-bottom:1.7rem}
+  details.fold > summary::-webkit-details-marker{display:none}
+  details.fold > summary::marker{content:""}
+  details.fold > summary:focus-visible{outline:2px solid var(--asagi);outline-offset:3px}
+  .fold-title{
+    display:block;
+    font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif;font-weight:900;
+    font-size:1.5rem;letter-spacing:.18em;margin:0 0 .9rem;padding-bottom:.7rem;
+    color:var(--gofun);border-bottom:1px solid rgba(233,238,244,.18);
+    text-shadow:.03em .02em 0 rgba(61,107,255,.62);
+  }
+  .fold-mark{
+    display:inline-block;font-size:.88rem;letter-spacing:.1em;color:var(--ao);
+    white-space:nowrap;
+  }
+  details.fold > summary:hover .fold-mark{color:var(--asagi)}
+  .fold-mark::before{content:"業務実績を見る"}
+  details.fold[open] .fold-mark::before{content:"とじる"}
+  .fold-mark::after{
+    content:"▾";display:inline-block;margin-left:.5rem;transform:translateY(-.05em);
+    transition:transform .2s ease;
+  }
+  details.fold[open] .fold-mark::after{transform:translateY(-.05em) rotate(180deg)}
 
   dl{margin:0;display:grid;gap:1.2rem}
   .row{display:grid;grid-template-columns:6.5rem 1fr;gap:1.4rem;align-items:baseline}
@@ -154,7 +192,7 @@
     .likes div{grid-template-columns:1fr;gap:.1rem}
   }
   @media (prefers-reduced-motion:reduce){
-    .lamp,.stars{animation:none}
+    .lamp,.stars,.vision li::before{animation:none}
     *{transition:none!important}
   }
 </style>
@@ -174,8 +212,16 @@
       <h1 class="name">でらぼ</h1>
     </div>
     <p class="lede">哲学科の大学院を出たあと、予備校で5年間ほど勤務し、31歳でWebエンジニアに転職。現在は渋谷の受託開発企業に勤務。</p>
-    <p class="pull">デジタル・リアル双方での対話空間の創出、デジタル民主主義、プルラリティなどのシビックテック領域、人文知とテクノロジーの融合などに関心があります。</p>
   </header>
+
+  <section>
+    <h2>ビジョン</h2>
+    <ul class="vision">
+      <li>デジタル・リアル双方での対話空間の創出</li>
+      <li>デジタル民主主義、プルラリティなどのシビックテック領域</li>
+      <li>人文知とテクノロジーの融合</li>
+    </ul>
+  </section>
 
   <section>
     <h2>経歴</h2>
@@ -185,41 +231,6 @@
       <div class="row"><dt>2022–2024</dt><dd>Web制作・システム開発のスタートアップ／コーダー → BEエンジニア → 開発リーダー</dd></div>
       <div class="row"><dt>2025–</dt><dd>FinTech系の受託開発企業／開発エンジニア／組織マネージャー経験も有</dd></div>
     </dl>
-  </section>
-
-  <section>
-    <h2>スキル</h2>
-    <p>バックエンド開発（Ruby on Rails / Laravelなど）が主軸です。フロントエンド（TypeScript / React / Vue.js）やインフラ（AWS・GCP）も業務で少々触れています。</p>
-  </section>
-
-  <section>
-    <h2>案件経歴</h2>
-
-    <div class="item">
-      <h3>採用管理SaaSの保守運用</h3>
-      <span class="period">2025.2 〜 継続中</span>
-      <p>マルチテナント型SaaS。約40名のスクラム体制で、開発メンバーとしてAPI設計・詳細設計・実装・テストなどを担当。</p>
-      <p class="stack">Ruby on Rails ／ TypeScript ／ React ／ RSpec ／ PostgreSQL ／ GCP ／ Docker ／ Kubernetes</p>
-    </div>
-
-    <div class="item">
-      <h3>コンクール開催管理システムのリニューアル</h3>
-      <span class="period">2023.10 〜 2024.3、以降保守</span>
-      <p>全国の自治体で行われるコンクールの開催支援から、応募・審査・表彰までを管理するシステム。開発リーダー（PM兼開発）として5名体制を担当。要件定義・DB設計・クライアント折衝・スケジュール管理・メンバー指導まで一通り。</p>
-      <p class="stack">Laravel ／ PHP ／ AWS ／ MySQL</p>
-    </div>
-
-    <div class="item">
-      <h3>ガチャシステム型アプリの新規開発</h3>
-      <span class="period">2023.2 〜、以降保守</span>
-      <p>総ユーザー数15万人規模の新規システム開発にコアメンバーとして参画。</p>
-      <p class="stack">Laravel ／ Vue.js ／ Tailwind CSS ／ AWS ／ MySQL</p>
-    </div>
-
-    <div class="item">
-      <h3>そのほか</h3>
-      <p>スケジュール管理アプリの設計、社宅管理システムのリニューアル、福祉請求システムの追加開発、求人マッチングシステムの保守、ヘッドレスCMSでのコーポレートサイト保守、各種サイトリニューアル、キャンペーンLP制作など。</p>
-    </div>
   </section>
 
   <section>
@@ -253,21 +264,44 @@
   </section>
 
   <section>
-    <h2>これから</h2>
-    <ul>
-      <li>デジタル・リアル双方での対話空間の創出</li>
-      <li>シビックテック領域への本格参画</li>
-      <li>人文知とテクノロジーの融合</li>
-    </ul>
-  </section>
-
-  <section>
     <h2>趣向</h2>
     <div class="likes">
       <div><b>本</b><span>ニーチェ『ツァラトゥストラ』、ハイデガー『存在と時間』、ドストエフスキー『カラマーゾフの兄弟』、リルケ『若き詩人への手紙』、ヘッセ『車輪の下』『デミアン』『荒野のおおかみ』、カフカ『変身』、サリンジャー『ライ麦畑でつかまえて』、ヴォネガット『プレイヤー・ピアノ』、ラム・ダス『ビー・ヒア・ナウ』、坂口安吾『堕落論』『FARCEに就て』、九鬼周造『「いき」の構造』、深沢七郎『楢山節考』『風流夢譚』、宮沢賢治『銀河鉄道の夜』、山口昌男『道化の民俗学』『道化的世界』、高橋源一郎『ジョン・レノン対火星人』『さようなら、ギャングたち』、戌井昭人『ぴんぞろ』</span></div>
       <div><b>映画</b><span>北野武『ソナチネ』『菊次郎の夏』『座頭市』、メルヴィル『サムライ』、『きっとうまくいく』、『ネバーランド』、『ラブ&amp;マーシー』</span></div>
       <div><b>音楽</b><span>踊ってばかりの国、ザ・ビーチ・ボーイズ、ブライアン・ウィルソン。大学４年から１年間ピアノ習いましたが、弾けません。バーでピアノを奏でる人生が良かったです。</span></div>
     </div>
+  </section>
+
+  <section>
+    <details class="fold">
+    <summary><span class="fold-title">業務実績</span><span class="fold-mark" aria-hidden="true"></span></summary>
+
+    <div class="item">
+      <h3>採用管理SaaSの保守運用</h3>
+      <span class="period">2025.2 〜 継続中</span>
+      <p>マルチテナント型SaaS。約40名のスクラム体制で、開発メンバーとしてAPI設計・詳細設計・実装・テストなどを担当。</p>
+      <p class="stack">Ruby on Rails ／ TypeScript ／ React ／ RSpec ／ PostgreSQL ／ GCP ／ Docker ／ Kubernetes</p>
+    </div>
+
+    <div class="item">
+      <h3>コンクール開催管理システムのリニューアル</h3>
+      <span class="period">2023.10 〜 2024.3、以降保守</span>
+      <p>全国の自治体で行われるコンクールの開催支援から、応募・審査・表彰までを管理するシステム。開発リーダー（PM兼開発）として5名体制を担当。要件定義・DB設計・クライアント折衝・スケジュール管理・メンバー指導まで一通り。</p>
+      <p class="stack">Laravel ／ PHP ／ AWS ／ MySQL</p>
+    </div>
+
+    <div class="item">
+      <h3>ガチャシステム型アプリの新規開発</h3>
+      <span class="period">2023.2 〜、以降保守</span>
+      <p>総ユーザー数15万人規模の新規システム開発にコアメンバーとして参画。</p>
+      <p class="stack">Laravel ／ Vue.js ／ Tailwind CSS ／ AWS ／ MySQL</p>
+    </div>
+
+    <div class="item">
+      <h3>そのほか</h3>
+      <p>スケジュール管理アプリの設計、社宅管理システムのリニューアル、福祉請求システムの追加開発、求人マッチングシステムの保守、ヘッドレスCMSでのコーポレートサイト保守、各種サイトリニューアル、キャンペーンLP制作など。</p>
+    </div>
+    </details>
   </section>
 
   <footer>最終更新 2026年9月</footer>
