@@ -97,25 +97,25 @@
   }
   .role{margin:1.6rem 0 0;font-size:.92rem;color:var(--tetsu);letter-spacing:.14em}
   .lede{margin:2.2rem 0 0;max-width:35rem;color:var(--gofun)}
-  .vision{
+  .interest{
     margin:0;padding:0;list-style:none;max-width:34rem;
     font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif;font-weight:600;
     font-size:clamp(1.08rem,2.4vw,1.26rem);line-height:2.1;letter-spacing:.08em;
     color:var(--gofun);
   }
-  .vision li{
+  .interest li{
     position:relative;padding-left:1.5rem;margin-bottom:1.1rem;
   }
-  .vision li:last-child{margin-bottom:0}
-  .vision li::before{
+  .interest li:last-child{margin-bottom:0}
+  .interest li::before{
     content:"";position:absolute;left:-.12rem;top:.7em;
     width:1rem;height:1rem;background:var(--ginga);
     clip-path:polygon(50% 0%,59% 41%,100% 50%,59% 59%,50% 100%,41% 59%,0% 50%,41% 41%);
     filter:drop-shadow(0 0 .3rem rgba(174,196,240,.9));
     animation:twinkle 5s ease-in-out infinite alternate;
   }
-  .vision li:nth-child(2)::before{animation-delay:-1.7s}
-  .vision li:nth-child(3)::before{animation-delay:-3.4s}
+  .interest li:nth-child(2)::before{animation-delay:-1.7s}
+  .interest li:nth-child(3)::before{animation-delay:-3.4s}
 
   /* sections */
   section{padding-top:4rem}
@@ -192,7 +192,7 @@
     .likes div{grid-template-columns:1fr;gap:.1rem}
   }
   @media (prefers-reduced-motion:reduce){
-    .lamp,.stars,.vision li::before{animation:none}
+    .lamp,.stars,.interest li::before{animation:none}
     *{transition:none!important}
   }
 </style>
@@ -211,12 +211,12 @@
       </div>
       <h1 class="name">でらぼ</h1>
     </div>
-    <p class="lede">哲学科の大学院を出たあと、予備校で5年間ほど勤務し、31歳でWebエンジニアに転職。現在は渋谷の受託開発企業に勤務。</p>
+    <p class="lede">哲学科の大学院を出たあと、予備校で5年間ほど勤務し、31歳でWebエンジニアに転職。現在は渋谷の受託開発企業に勤務。自身のやりたいことの実現に向けて、いまは開発の現場でエンジニアとしての実力と経験を積んでいる段階です。</p>
   </header>
 
   <section>
-    <h2>ビジョン</h2>
-    <ul class="vision">
+    <h2>関心</h2>
+    <ul class="interest">
       <li>デジタル・リアル双方での対話空間の創出</li>
       <li>デジタル民主主義、プルラリティなどのシビックテック領域</li>
       <li>人文知とテクノロジーの融合</li>
