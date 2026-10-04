@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>でらぼ — Webエンジニア</title>
-<meta name="description" content="Webエンジニア。哲学科の大学院、予備校のマネジメントを経てエンジニアへ。対話空間の創出、デジタル民主主義などのシビックテック、人文知とテクノロジーの融合などに関心があります。">
+<title>でらぼ — 人文知を持つWebエンジニア</title>
+<meta name="description" content="人文知を持つWebエンジニア。評論家ではなく実装者として、テクノロジーを世界に対して適切に使う道を考えています。哲学の大学院、予備校のマネジメントを経てWebエンジニアへ。対話空間の創出、デジタル民主主義、人文知とテクノロジーの融合に関心があります。">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#05070F">
+<link rel="canonical" href="https://derabo-site.com/">
 <meta property="og:type" content="profile">
-<meta property="og:title" content="でらぼ — Webエンジニア">
-<meta property="og:description" content="哲学の大学院、予備校のマネジメントを経てWebエンジニアへ。バックエンドが主軸。シビックテックや人文知に関心があります。">
+<meta property="og:title" content="でらぼ — 人文知を持つWebエンジニア">
+<meta property="og:description" content="人文知を持つWebエンジニア。評論家ではなく実装者として、テクノロジーを世界に対して適切に使う道を考えています。対話空間の創出、デジタル民主主義、人文知とテクノロジーの融合に関心があります。">
 <meta property="og:url" content="https://derabo-site.com/">
 <meta property="og:image" content="https://derabo-site.com/ogp/card.jpg">
 <meta property="og:image:width" content="1200">
@@ -18,7 +19,7 @@
 <meta name="twitter:image" content="https://derabo-site.com/ogp/card.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@600;900&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@600;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --kuro:#05070F;
@@ -95,21 +96,45 @@
     font-size:clamp(3.6rem,15vw,6.2rem);line-height:1;margin:0;letter-spacing:.1em;
     color:var(--gofun);
   }
-  .role{margin:1.6rem 0 0;font-size:.92rem;color:var(--tetsu);letter-spacing:.14em}
-  .lede{margin:2.2rem 0 0;max-width:35rem;color:var(--gofun)}
-  .lede + .lede{margin-top:1.2rem}
-  .interest{
-    margin:0;padding:0;list-style:none;max-width:34rem;
+  /* 自己定義の一文 */
+  .tagline{
+    margin:2rem 0 0;max-width:33rem;
     font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif;font-weight:600;
-    font-size:clamp(1.08rem,2.4vw,1.26rem);line-height:2.1;letter-spacing:.08em;
+    font-size:clamp(1.22rem,4.2vw,1.62rem);line-height:1.95;letter-spacing:.06em;
     color:var(--gofun);
+    text-shadow:.03em .02em 0 rgba(61,107,255,.5);
   }
-  .interest li{
-    position:relative;padding-left:1.5rem;margin-bottom:1.1rem;
+  .lede{margin:2rem 0 0;max-width:35rem;color:var(--gofun)}
+  .lede + .lede{margin-top:1.1rem}
+
+  /* 連絡導線 */
+  .cta{
+    display:inline-flex;align-items:center;gap:.6rem;
+    margin-top:2.2rem;padding:.55rem 1.2rem;
+    border:1px solid rgba(157,189,234,.45);border-radius:999px;
+    font-size:.92rem;letter-spacing:.06em;text-decoration:none;
+    color:var(--ginga);background:rgba(91,140,255,.08);
+    transition:background .2s ease,border-color .2s ease,color .2s ease;
   }
-  .interest li:last-child{margin-bottom:0}
+  .cta:hover{background:rgba(91,140,255,.16);border-color:rgba(157,189,234,.8);color:var(--gofun)}
+  .cta svg{width:.95em;height:.95em;fill:currentColor;flex-shrink:0}
+
+  /* 持っているもの */
+  .axes{display:grid;gap:2.2rem;max-width:37rem;margin:0}
+  .axis h3{display:flex;flex-wrap:wrap;align-items:baseline;gap:.7rem;margin-bottom:.5rem}
+  .axis-from{
+    font-family:"Zen Kaku Gothic New",sans-serif;font-weight:500;
+    font-size:.74rem;letter-spacing:.12em;color:var(--tetsu);
+    border:1px solid rgba(143,182,222,.4);border-radius:3px;padding:.1rem .55rem;
+    line-height:1.8;
+  }
+  .axis p{margin:0}
+
+  /* 関心 */
+  .interest{margin:0;padding:0;list-style:none;max-width:37rem;display:grid;gap:2rem}
+  .interest li{position:relative;padding-left:1.7rem}
   .interest li::before{
-    content:"";position:absolute;left:-.12rem;top:.7em;
+    content:"";position:absolute;left:-.12rem;top:.62em;
     width:1rem;height:1rem;background:var(--ginga);
     clip-path:polygon(50% 0%,59% 41%,100% 50%,59% 59%,50% 100%,41% 59%,0% 50%,41% 41%);
     filter:drop-shadow(0 0 .3rem rgba(174,196,240,.9));
@@ -117,6 +142,13 @@
   }
   .interest li:nth-child(2)::before{animation-delay:-1.7s}
   .interest li:nth-child(3)::before{animation-delay:-3.4s}
+  .interest-head{
+    display:block;
+    font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif;font-weight:600;
+    font-size:clamp(1.08rem,2.4vw,1.26rem);line-height:1.9;letter-spacing:.08em;
+    color:var(--gofun);margin-bottom:.5rem;
+  }
+  .interest p{margin:0}
 
   /* sections */
   section{padding-top:4rem}
@@ -133,33 +165,23 @@
   p{margin:0 0 1.1rem;max-width:37rem}
   section > p:last-child{margin-bottom:0}
 
-  /* 折りたたみ */
-  details.fold > summary{display:block;cursor:pointer;list-style:none;margin-bottom:1.7rem}
-  details.fold > summary::-webkit-details-marker{display:none}
-  details.fold > summary::marker{content:""}
-  details.fold > summary:focus-visible{outline:2px solid var(--asagi);outline-offset:3px}
-  .fold-title{
-    display:block;
-    font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif;font-weight:900;
-    font-size:1.5rem;letter-spacing:.18em;margin:0 0 .9rem;padding-bottom:.7rem;
-    color:var(--gofun);border-bottom:1px solid rgba(233,238,244,.18);
-    text-shadow:.03em .02em 0 rgba(61,107,255,.62);
+  /* 経歴タイムライン */
+  dl{margin:0;display:grid;gap:0}
+  .row{
+    position:relative;display:grid;grid-template-columns:6.5rem 1fr;gap:1.4rem;
+    align-items:baseline;padding:0 0 1.9rem 1.5rem;
   }
-  .fold-mark{
-    display:inline-block;font-size:.88rem;letter-spacing:.1em;color:var(--ao);
-    white-space:nowrap;
+  .row:last-child{padding-bottom:0}
+  .row::before{
+    content:"";position:absolute;left:0;top:.62em;
+    width:.52rem;height:.52rem;border-radius:50%;
+    background:var(--ginga);box-shadow:0 0 0 3px rgba(174,196,240,.14);
   }
-  details.fold > summary:hover .fold-mark{color:var(--asagi)}
-  .fold-mark::before{content:"業務実績を見る"}
-  details.fold[open] .fold-mark::before{content:"とじる"}
-  .fold-mark::after{
-    content:"▾";display:inline-block;margin-left:.5rem;transform:translateY(-.05em);
-    transition:transform .2s ease;
+  .row::after{
+    content:"";position:absolute;left:calc(.26rem - .5px);top:1.5em;bottom:0;
+    width:1px;background:linear-gradient(rgba(174,196,240,.42),rgba(174,196,240,.12));
   }
-  details.fold[open] .fold-mark::after{transform:translateY(-.05em) rotate(180deg)}
-
-  dl{margin:0;display:grid;gap:1.2rem}
-  .row{display:grid;grid-template-columns:6.5rem 1fr;gap:1.4rem;align-items:baseline}
+  .row:last-child::after{display:none}
   .row dt{color:var(--tetsu);font-size:.84rem;letter-spacing:.07em;font-variant-numeric:tabular-nums}
   .row dd{margin:0}
 
@@ -174,23 +196,59 @@
   li{margin-bottom:.45rem}
   li::marker{color:var(--ginga)}
 
-  .likes{display:grid;gap:1.4rem;max-width:37rem}
-  .likes div{display:grid;grid-template-columns:4rem 1fr;gap:1.2rem;align-items:baseline}
-  .likes b{color:var(--tetsu);font-size:.86rem;font-weight:500;letter-spacing:.1em}
+  /* 役割（業務実績） */
+  .item .role-line{margin:0 0 .6rem;font-size:.95rem}
+  .item .role-line strong{font-weight:700;letter-spacing:.04em;color:var(--ginga)}
+
+  /* 嗜好 */
+  .likes{display:grid;gap:2.4rem;max-width:40rem}
+  .likes h3{
+    font-size:.86rem;font-weight:500;letter-spacing:.18em;color:var(--tetsu);
+    font-family:"Zen Kaku Gothic New",sans-serif;margin:0 0 .9rem;
+  }
+  .tags{
+    display:flex;flex-wrap:wrap;gap:.5rem .55rem;
+    margin:0;padding:0;list-style:none;
+  }
+  .tags li{
+    margin:0;padding:.3rem .8rem;
+    border:1px solid rgba(174,196,240,.22);border-radius:4px;
+    background:rgba(174,196,240,.045);
+    font-size:.88rem;line-height:1.75;letter-spacing:.02em;color:var(--gofun);
+  }
+  .likes .aside{margin:1rem 0 0;font-size:.9rem;color:var(--gofun-dim);max-width:37rem}
+
+  /* English */
+  .en{
+    margin-top:4rem;padding:1.8rem 0 0;border-top:1px solid rgba(233,238,244,.12);
+    max-width:37rem;
+  }
+  .en h2{
+    font-size:.82rem;font-weight:500;letter-spacing:.2em;border:0;padding:0;
+    margin:0 0 .9rem;color:var(--tetsu);text-shadow:none;
+    font-family:"Zen Kaku Gothic New",sans-serif;
+  }
+  .en p{font-size:.92rem;line-height:1.95;color:var(--gofun-dim);margin:0 0 .8rem}
+  .en p:last-child{margin-bottom:0}
 
   .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin:.7rem 0 0;font-size:.92rem}
   a{color:var(--ao);text-underline-offset:.28em;text-decoration-thickness:1px}
   a:hover{text-decoration:none;color:var(--asagi)}
   a:focus-visible{outline:2px solid var(--asagi);outline-offset:3px}
 
-  footer{margin-top:5.5rem;padding-top:1.4rem;border-top:1px solid rgba(233,238,244,.15);
-    color:var(--gofun-dim);font-size:.8rem;letter-spacing:.1em}
+  footer{
+    margin-top:4rem;padding-top:1.4rem;border-top:1px solid rgba(233,238,244,.15);
+    display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:baseline;
+    color:var(--gofun-dim);font-size:.8rem;letter-spacing:.1em;
+  }
+  footer a{color:var(--tetsu)}
+  footer .updated{margin-left:auto}
 
   @media (max-width:640px){
     .hero{padding:4rem 0 3rem}
     .row{grid-template-columns:1fr;gap:.1rem}
     .row dt{line-height:1.8}
-    .likes div{grid-template-columns:1fr;gap:.1rem}
+    footer .updated{margin-left:0}
   }
   @media (prefers-reduced-motion:reduce){
     .lamp,.stars,.interest li::before{animation:none}
@@ -212,19 +270,15 @@
       </div>
       <h1 class="name">でらぼ</h1>
     </div>
-    <p class="lede">哲学科の大学院修了後、予備校に約5年間勤務し、31歳でWebエンジニアに転職。現在は渋谷の受託開発企業に勤務しています。</p>
-    <p class="lede">大学院時代には哲学科の院生としてアカデミアを志していましたが、半ば挫折。その後、30代を迎え改めて「世界にとって本当に意味のあることをしたい」という自身の思いに向き合い、評論家ではなく、実装者として社会を良くしたいと考え、エンジニアへ転身しました。</p>
+    <p class="tagline">人文知を持つWebエンジニア。<br>評論家ではなく実装者として、テクノロジーを世界に対して適切に使う道を考えています。</p>
+    <p class="lede">哲学科の大学院修了後、予備校に約5年間勤務し、31歳でWebエンジニアに転職。現在は渋谷の受託開発企業で、Webアプリケーションのサーバーサイドを中心に開発しています。</p>
+    <p class="lede">大学院時代は哲学の研究職を志していましたが、道半ばでアカデミアからは離れ、予備校に就職。30代を迎えて改めて「世界にとって本当に意味のあることをしたい」という思いに向き合い、エンジニアへ転身しました。</p>
     <p class="lede">現在は開発現場で経験を積みながら、社外にも活動の場を広げています。</p>
+    <a class="cta" href="https://x.com/drb44n" target="_blank" rel="me noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644Z"/></svg>
+      X で連絡する（@drb44n）
+    </a>
   </header>
-
-  <section>
-    <h2>関心</h2>
-    <ul class="interest">
-      <li>デジタル・リアル双方での対話空間の創出</li>
-      <li>デジタル民主主義などのシビックテック領域</li>
-      <li>人文知とテクノロジーの融合</li>
-    </ul>
-  </section>
 
   <section>
     <h2>経歴</h2>
@@ -237,11 +291,87 @@
   </section>
 
   <section>
+    <h2>培ってきたもの</h2>
+
+    <div class="axes">
+      <div class="axis">
+        <h3>問いを立てる<span class="axis-from">哲学</span></h3>
+        <p>大学院まで哲学を専攻し、現状を疑い、俯瞰的に問い直す訓練を続けてきました。社会課題と技術の観点を結びつけて考えられる思考回路は、この訓練によるところが大きいです。</p>
+      </div>
+      <div class="axis">
+        <h3>人と組織の間<span class="axis-from">マネジメント</span></h3>
+        <p>予備校で教室長・エリア責任者を約3年。エンジニア転職後も5名体制の開発リーダー（PM兼開発）としてスケジュール管理やメンバー指導を担い、現職では組織マネージャーも経験しました。技術だけでなく、人が動く時も目にしてきました。</p>
+      </div>
+      <div class="axis">
+        <h3>形にする<span class="axis-from">実装</span></h3>
+        <p>Ruby on Rails と Laravel などのバックエンド開発を主軸に、新規開発から保守運用まで。約40名のスクラム体制でのAPI設計・実装や、総ユーザー数15万人規模の新規開発にコアメンバーとして参画してきました。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>AIとの関わり</h2>
+    <p>生成AIは、業務でも個人開発でも日常的に使う道具になっています。部署内でのClaude導入も推進しました。社内ハッカソンで発表した<a href="https://small-voice-landing-kzmtdesx2q-an.a.run.app/introduction" target="_blank" rel="noopener">Small Voice</a>も、生成AIを使って小さな声を集め、可視化するWebサービスです。</p>
+    <p>一方で、AIの進歩の陰には、暴走のリスク、搾取の構造、環境への負荷、合理化された人間理解といった問題も潜んでいます。その恩恵を受けている当事者として、そこから目をそらさずに、適切な関わり方を模索したいと思っています。</p>
+  </section>
+
+  <section>
+    <h2>関心</h2>
+    <ul class="interest">
+      <li>
+        <span class="interest-head">デジタル・リアル双方での対話空間の創出</span>
+        <p>学生時代から「哲学」は私の考え方のベースにあり、それを手放さず、休日は有志の哲学対話に積極的に参加しています。ホッとできて、ゆっくりと自分の話したいことを話せ、他人を否定しない、他人を制圧しない言葉で交わされる言語空間のニーズがどれだけ高まっているか、参加するたびにひしひしと感じています。デジタルの側ではブロードリスニングやプルラリティに関心があり、Small Voice もその一環として自身で形にしてみたものです。</p>
+      </li>
+      <li>
+        <span class="interest-head">Code for Japanなどのシビックテック領域</span>
+        <p>イベントやサミットにも、積極的に参加し始めています。まずは自分事として、熱い体温を持って取り組める社会課題を見つけ、ボランティアからでも開発のできるエンジニアとして関わっていきたいと思っています。</p>
+      </li>
+      <li>
+        <span class="interest-head">人文知とテクノロジーの融合</span>
+        <p>いまも哲学書や純文学、批評などを、時間を見つけて読むようにしています（<a href="#shiko">嗜好</a>）。ドイツ語翻訳もその一環として続けています（全然読めませんが）。自分の根底にある世界観を見失わず、自分へ戻ってくるための習慣のようなものと位置付けています。社内LTで話した「文学や詩をプログラミング的に考えてみる」も、その往復があってこその発想でした。</p>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>業務実績</h2>
+
+    <div class="item">
+      <h3>採用管理SaaSの保守運用</h3>
+      <span class="period">2025.2 〜 継続中</span>
+      <p class="role-line"><strong>役割：開発メンバー（約40名のスクラム体制）</strong></p>
+      <p>マルチテナント型SaaS。API設計・詳細設計・実装・テストなどを担当。</p>
+      <p class="stack">Ruby on Rails ／ TypeScript ／ React ／ RSpec ／ PostgreSQL ／ GCP ／ Docker ／ Kubernetes</p>
+    </div>
+
+    <div class="item">
+      <h3>コンクール開催管理システムのリニューアル</h3>
+      <span class="period">2023.10 〜 2024.3、以降保守</span>
+      <p class="role-line"><strong>役割：開発リーダー（PM兼開発・5名体制）</strong></p>
+      <p>全国の自治体で行われるコンクールの開催支援から、応募・審査・表彰までを管理するシステム。要件定義・DB設計・クライアント折衝・スケジュール管理・メンバー指導まで一通り。</p>
+      <p class="stack">Laravel ／ PHP ／ AWS ／ MySQL</p>
+    </div>
+
+    <div class="item">
+      <h3>ガチャシステム型アプリの新規開発</h3>
+      <span class="period">2023.2 〜、以降保守</span>
+      <p class="role-line"><strong>役割：新規開発のコアメンバー</strong></p>
+      <p>総ユーザー数15万人規模の新規システム開発に参画。</p>
+      <p class="stack">Laravel ／ Vue.js ／ Tailwind CSS ／ AWS ／ MySQL</p>
+    </div>
+
+    <div class="item">
+      <h3>そのほか</h3>
+      <p>スケジュール管理アプリの設計、社宅管理システムのリニューアル、福祉請求システムの追加開発、求人マッチングシステムの保守、ヘッドレスCMSでのコーポレートサイト保守、各種サイトリニューアル、キャンペーンLP制作など。</p>
+    </div>
+  </section>
+
+  <section>
     <h2>個人活動</h2>
 
     <div class="item">
       <h3>Code for Japanのイベント参加</h3>
-      <p>Code for Japanが主催するシビックテック関連のイベントやサミットに、継続的に参加しています。</p>
+      <p>Code for Japanが主催するシビックテック関連のイベントやサミットに、最近参加し始めました。</p>
     </div>
 
     <div class="item">
@@ -271,48 +401,63 @@
     </div>
   </section>
 
-  <section>
-    <h2>趣向</h2>
+  <section id="shiko">
+    <h2>嗜好</h2>
     <div class="likes">
-      <div><b>本</b><span>ニーチェ『ツァラトゥストラ』、ハイデガー『存在と時間』、ドストエフスキー『カラマーゾフの兄弟』、リルケ『若き詩人への手紙』、ヘッセ『車輪の下』『デミアン』『荒野のおおかみ』、カフカ『変身』、サリンジャー『ライ麦畑でつかまえて』、ヴォネガット『プレイヤー・ピアノ』、ラム・ダス『ビー・ヒア・ナウ』、坂口安吾『堕落論』『FARCEに就て』、九鬼周造『「いき」の構造』、深沢七郎『楢山節考』『風流夢譚』、宮沢賢治『銀河鉄道の夜』、山口昌男『道化の民俗学』『道化的世界』、高橋源一郎『ジョン・レノン対火星人』『さようなら、ギャングたち』、戌井昭人『ぴんぞろ』</span></div>
-      <div><b>映画</b><span>北野武『ソナチネ』『菊次郎の夏』『座頭市』、メルヴィル『サムライ』、『きっとうまくいく』、『ネバーランド』、『ラブ&amp;マーシー』</span></div>
-      <div><b>音楽</b><span>踊ってばかりの国、ザ・ビーチ・ボーイズ、ブライアン・ウィルソン。大学４年から１年間ピアノ習いましたが、弾けません。バーでピアノを奏でる人生が良かったです。</span></div>
+      <div>
+        <h3>本</h3>
+        <ul class="tags">
+          <li>ニーチェ『ツァラトゥストラ』</li>
+          <li>ハイデガー『存在と時間』</li>
+          <li>ドストエフスキー『カラマーゾフの兄弟』</li>
+          <li>リルケ『若き詩人への手紙』</li>
+          <li>ヘッセ『車輪の下』『デミアン』『荒野のおおかみ』</li>
+          <li>カフカ『変身』</li>
+          <li>サリンジャー『ライ麦畑でつかまえて』</li>
+          <li>ヴォネガット『プレイヤー・ピアノ』</li>
+          <li>ラム・ダス『ビー・ヒア・ナウ』</li>
+          <li>坂口安吾『堕落論』『FARCEに就て』</li>
+          <li>九鬼周造『「いき」の構造』</li>
+          <li>深沢七郎『楢山節考』『風流夢譚』</li>
+          <li>宮沢賢治『銀河鉄道の夜』</li>
+          <li>山口昌男『道化の民俗学』『道化的世界』</li>
+          <li>高橋源一郎『ジョン・レノン対火星人』『さようなら、ギャングたち』</li>
+          <li>戌井昭人『ぴんぞろ』</li>
+        </ul>
+      </div>
+      <div>
+        <h3>映画</h3>
+        <ul class="tags">
+          <li>北野武『ソナチネ』『菊次郎の夏』『座頭市』</li>
+          <li>メルヴィル『サムライ』</li>
+          <li>『きっとうまくいく』</li>
+          <li>『ネバーランド』</li>
+          <li>『ラブ&amp;マーシー』</li>
+        </ul>
+      </div>
+      <div>
+        <h3>音楽</h3>
+        <ul class="tags">
+          <li>踊ってばかりの国</li>
+          <li>ザ・ビーチ・ボーイズ</li>
+          <li>ブライアン・ウィルソン</li>
+        </ul>
+        <p class="aside">大学４年から１年間ピアノ習いましたが、弾けません。バーでピアノを奏でる人生が良かったです。</p>
+      </div>
     </div>
   </section>
 
-  <section>
-    <details class="fold">
-    <summary><span class="fold-title">業務実績</span><span class="fold-mark" aria-hidden="true"></span></summary>
-
-    <div class="item">
-      <h3>採用管理SaaSの保守運用</h3>
-      <span class="period">2025.2 〜 継続中</span>
-      <p>マルチテナント型SaaS。約40名のスクラム体制で、開発メンバーとしてAPI設計・詳細設計・実装・テストなどを担当。</p>
-      <p class="stack">Ruby on Rails ／ TypeScript ／ React ／ RSpec ／ PostgreSQL ／ GCP ／ Docker ／ Kubernetes</p>
-    </div>
-
-    <div class="item">
-      <h3>コンクール開催管理システムのリニューアル</h3>
-      <span class="period">2023.10 〜 2024.3、以降保守</span>
-      <p>全国の自治体で行われるコンクールの開催支援から、応募・審査・表彰までを管理するシステム。開発リーダー（PM兼開発）として5名体制を担当。要件定義・DB設計・クライアント折衝・スケジュール管理・メンバー指導まで一通り。</p>
-      <p class="stack">Laravel ／ PHP ／ AWS ／ MySQL</p>
-    </div>
-
-    <div class="item">
-      <h3>ガチャシステム型アプリの新規開発</h3>
-      <span class="period">2023.2 〜、以降保守</span>
-      <p>総ユーザー数15万人規模の新規システム開発にコアメンバーとして参画。</p>
-      <p class="stack">Laravel ／ Vue.js ／ Tailwind CSS ／ AWS ／ MySQL</p>
-    </div>
-
-    <div class="item">
-      <h3>そのほか</h3>
-      <p>スケジュール管理アプリの設計、社宅管理システムのリニューアル、福祉請求システムの追加開発、求人マッチングシステムの保守、ヘッドレスCMSでのコーポレートサイト保守、各種サイトリニューアル、キャンペーンLP制作など。</p>
-    </div>
-    </details>
+  <section class="en" lang="en">
+    <h2>In English</h2>
+    <p>Derabo — a web engineer in Tokyo, working mainly on the server side. After an MA in philosophy and five years managing branches at a cram school, I moved into software engineering at 31, and now build web applications at a contract development firm in Shibuya.</p>
+    <p>I'm interested in creating spaces for dialogue, in civic tech and digital democracy, and in where the humanities meet technology. I keep thinking about how to put technology to good use in the world — as a builder rather than a commentator.</p>
+    <p>If any of this overlaps with what you're working on, my DMs on <a href="https://x.com/drb44n" target="_blank" rel="me noopener">X (@drb44n)</a> are open.</p>
   </section>
 
-  <footer>最終更新 2026年10月</footer>
+  <footer>
+    <a href="https://x.com/drb44n" target="_blank" rel="me noopener">X（@drb44n）</a>
+    <span class="updated">最終更新 2026年10月</span>
+  </footer>
 </div>
 </body>
 </html>
