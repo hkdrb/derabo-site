@@ -536,7 +536,7 @@
   var scroller = nav.querySelector('.sitenav-scroll');
   var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
   var targets = links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
-  var current = -1, ticking = false;
+  var current = -1, ticking = false, locked = false, settleTimer = null;
 
   // 横スクロールのナビで、現在地のリンクが隠れないようにする
   function reveal(a){
@@ -561,8 +561,17 @@
     return sp + 16;
   }
 
+  function setActive(idx){
+    if (idx === current) return;
+    if (current > -1) links[current].removeAttribute('aria-current');
+    if (idx > -1) { links[idx].setAttribute('aria-current', 'true'); reveal(links[idx]); }
+    current = idx;
+    updateEdges();
+  }
+
   function update(){
     ticking = false;
+    if (locked) return; // 押したタブを点けたまま、移動中の通過セクションでは切り替えない
     var line = activationLine();
     var idx = -1;
     for (var i = 0; i < targets.length; i++){
@@ -572,11 +581,7 @@
     if (window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 2) {
       idx = targets.length - 1;
     }
-    if (idx === current) return;
-    if (current > -1) links[current].removeAttribute('aria-current');
-    if (idx > -1) { links[idx].setAttribute('aria-current', 'true'); reveal(links[idx]); }
-    current = idx;
-    updateEdges();
+    setActive(idx);
   }
 
   function onScroll(){
@@ -584,6 +589,37 @@
     ticking = true;
     requestAnimationFrame(update);
   }
+
+  function unlock(){
+    locked = false;
+    clearInterval(settleTimer);
+    settleTimer = null;
+  }
+
+  // スクロールが止まったら連動を再開する
+  function unlockWhenSettled(){
+    var last = null, waited = 0;
+    clearInterval(settleTimer);
+    settleTimer = setInterval(function(){
+      var y = window.pageYOffset;
+      waited += 120;
+      if (y === last || waited > 2000) unlock();
+      last = y;
+    }, 120);
+  }
+
+  links.forEach(function(a, i){
+    a.addEventListener('click', function(){
+      locked = true;
+      setActive(i);
+      unlockWhenSettled();
+    });
+  });
+
+  // 自分でスクロールし直したら、その時点で連動に戻す
+  ['wheel','touchstart','keydown'].forEach(function(ev){
+    addEventListener(ev, function(){ if (locked) { unlock(); onScroll(); } }, {passive:true});
+  });
 
   addEventListener('scroll', onScroll, {passive:true});
   addEventListener('resize', function(){ updateEdges(); onScroll(); });
