@@ -553,9 +553,17 @@
     scroller.setAttribute('data-edge', left && right ? 'both' : left ? 'left' : right ? 'right' : 'none');
   }
 
+  // リンクを押して着地した位置（scroll-padding-top）より少し下を判定線にする。
+  // ここが着地位置と同値だと、1px差で手前のセクションが点灯してしまう。
+  function activationLine(){
+    var sp = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop);
+    if (!(sp > 0)) sp = nav.getBoundingClientRect().height;
+    return sp + 16;
+  }
+
   function update(){
     ticking = false;
-    var line = nav.getBoundingClientRect().height + 12;
+    var line = activationLine();
     var idx = -1;
     for (var i = 0; i < targets.length; i++){
       if (targets[i] && targets[i].getBoundingClientRect().top <= line) idx = i;
